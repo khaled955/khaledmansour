@@ -1,0 +1,69 @@
+import About from "./components/About/About"
+import Contacts from "./components/Contacts/Contacts"
+import Hero from "./components/Hero/Hero"
+import Navbar from "./components/Navbar/Navbar"
+import Projects from "./components/Projects/Projects"
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop"
+import Section from "./components/Section/Section"
+import Skills from "./components/Skills/Skills"
+import { DATA } from "./data/Data"
+import { useScrollSpy } from "./hooks/useScrollPay"
+
+
+
+
+
+function App(){
+
+  const activeId = useScrollSpy(['home','about','skills','projects','contact'])
+
+
+
+
+
+  return (
+    <>
+<a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-1.5 focus:rounded-lg focus:bg-amber-500 focus:text-white"
+      >
+        Skip to content
+      </a>
+
+      <main id="main" className={`min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 selection:bg-amber-300/60`}>
+
+        <Navbar activeId={activeId} />
+
+        <Hero summary={DATA.summary} socials={DATA.socials} />
+
+        <Section id="about" title="About">
+          <About />
+        </Section>
+
+        <Section id="skills" title="Skills">
+          <Skills skills={DATA.skills} />
+        </Section>
+
+        <Section id="projects" title="Projects">
+          <Projects projects={DATA.projects} />
+        </Section>
+
+        <Section id="contact" title="Contact">
+          <Contacts socials={DATA.socials} />
+        </Section>
+        <ScrollToTop/>
+
+        <footer className="py-8 text-center text-sm text-neutral-500 border-t border-neutral-200 dark:border-neutral-800">
+          © {new Date().getFullYear()} {DATA.name}. Built with React, Tailwind & Framer Motion.
+        </footer>
+      </main>
+
+
+
+
+
+    </>
+  )
+}
+
+export default App
