@@ -1,7 +1,11 @@
-import React from 'react'
+
 import { motion } from 'framer-motion'
+import LogoLight from '../../assets/khaledLogos/khaled-wordmark-light-transparent.svg'
+import LogoDark  from '../../assets/khaledLogos/khaled-wordmark-dark-transparent.svg'
+import MarkLight from '../../assets/khaledLogos/khaled-monogram-light-transparent.svg'
+import MarkDark  from '../../assets/khaledLogos/khaled-monogram-dark-transparent.svg'
+import { useEffect, useState } from 'react'
 import { useDarkMode } from '../../hooks/useDarkMode'
-import { DATA } from '../../data/Data'
 
 const links = [
   { href: '#home', label: 'Home' },
@@ -12,20 +16,34 @@ const links = [
 ]
 
 export default function Navbar({ activeId }: { activeId?: string }) {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
   const { dark, setDark } = useDarkMode()
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
   }, [])
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur bg-white/75 dark:bg-neutral-950/70 border-b border-neutral-200 dark:border-neutral-800">
+    <header className="sticky top-0 z-40 backdrop-blur bg-white dark:bg-neutral-950/70 border-b border-neutral-200 dark:border-neutral-800">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between" aria-label="Main">
-        <a href="#home" className="font-display font-semibold tracking-tight text-neutral-900 dark:text-white">
-          {DATA.name} <span className="text-neutral-500 dark:text-neutral-400">— {DATA.role}</span>
+        <a
+          href="#home"
+          className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg"
+          aria-label="Go to home"
+        >
+          {/* xs: monogram */}
+          <span className="flex sm:hidden">
+            <img src={MarkLight} alt="Khaled logo" className="h-8 dark:hidden" />
+            <img src={MarkDark}  alt="" className="h-8 hidden dark:block" />
+          </span>
+          {/* sm and up: wordmark */}
+          <span className="hidden sm:flex">
+            <img src={LogoLight} alt="Khaled dev logo" className="h-7 md:h-8 dark:hidden" />
+            <img src={LogoDark}  alt="" className="h-7 md:h-8 hidden dark:block" />
+          </span>
+          <span className="sr-only">Khaled — Front-End Developer</span>
         </a>
 
         {/* Desktop nav */}

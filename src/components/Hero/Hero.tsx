@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { fadeUp } from '../../lib/Animation'
-
+import khaled from "../../assets/khaled.png"
 interface Props {
   summary: string
   socials: { linkedin: string }
@@ -19,7 +19,9 @@ export default function Hero({ summary, socials }: Props){
             <a href={socials.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800">Contact Me</a>
           </div>
         </motion.div>
-        <motion.div initial={reduce ? undefined : { opacity: 0, scale: 0.96 }} whileInView={reduce ? undefined : { opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.15 }} viewport={{ once: true, amount: 0.4 }} aria-hidden="true" className="aspect-[4/3] w-full rounded-2xl bg-gradient-to-br from-amber-200 via-amber-100 to-white dark:from-neutral-800 dark:via-neutral-900 dark:to-black border border-neutral-200 dark:border-neutral-800 shadow-sm" />
+        <motion.div initial={reduce ? undefined : { opacity: 0, scale: 0.96 }} whileInView={reduce ? undefined : { opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.15 }} viewport={{ once: true, amount: 0.4 }} aria-hidden="true" className="aspect-[4/3] w-full rounded-2xl bg-gradient-to-br from-amber-200 via-amber-100 to-white dark:from-neutral-800 dark:via-neutral-900 dark:to-black border border-neutral-200 dark:border-neutral-800 shadow-sm" >
+         <img src={khaled} alt="khaled_mansour" />
+        </motion.div>
       </div>
     </section>
   )
