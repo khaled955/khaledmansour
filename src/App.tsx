@@ -1,3 +1,4 @@
+import { useState } from "react"
 import About from "./components/About/About"
 import Contacts from "./components/Contacts/Contacts"
 import Hero from "./components/Hero/Hero"
@@ -8,12 +9,17 @@ import Section from "./components/Section/Section"
 import Skills from "./components/Skills/Skills"
 import { DATA } from "./data/Data"
 import { useScrollSpy } from "./hooks/useScrollPay"
+import TypingSplash from "./components/TypingSplash/TypingSplash"
 
 
 
-
+const showcaseImages: string[] = DATA.projects
+  .map(p => p.image)                         // (string | undefined)[]
+  .filter((src): src is string => !!src)     // → string[]
+  .slice(0, 10);
 
 function App(){
+  const [splashDone, setSplashDone] = useState(false);
 
   const activeId = useScrollSpy(['home','about','skills','projects','contact'])
 
@@ -30,11 +36,28 @@ function App(){
         Skip to content
       </a>
 
-      <main id="main" className={`min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 selection:bg-amber-300/60`}>
+   {!splashDone && (
+      <TypingSplash
+  text="Welcome to Khaled Mansour Portfolio"
+  onDone={() => setSplashDone(true)}
+  oncePerSession
+  soundSrc="/public/sounds/keyboard-typing-fast-371229.mp3"   // <-- your file in /public/sounds
+  soundVolume={0.35}
+/>
+      )}
+
+
+
+
+      <main aria-hidden={!splashDone} id="main" className={`min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 selection:bg-amber-300/60`}>
 
         <Navbar activeId={activeId} />
 
-        <Hero summary={DATA.summary} socials={DATA.socials} />
+        <Hero summary={DATA.summary} socials={DATA.socials}
+          showcaseImages={showcaseImages}
+
+        
+        />
 
         <Section id="about" title="About">
           <About />
