@@ -223,6 +223,14 @@ export const DATA = {
       repo: 'https://github.com/khaled955/Osaka',
       image:smartlogin,
     },
+    {
+      title: 'Special-Template-Elzero-Landing-page',
+      description: 'Static Website to display Portifolio',
+      tech: ['Html',`Css`,'Javascript',`Font-awesome`,`Bootstrap`],
+      live: 'https://khaled955.github.io/Special-Template-Elzero/',
+      repo: 'https://github.com/khaled955/Special-Template-Elzero',
+      image:smartlogin,
+    },
 
 
 
