@@ -1,5 +1,5 @@
 import type { Project } from "../types/Types";
-import quizz from "../assets/ProjectsPhoo/QuizzApp/quizz.png"
+import quizz from "../assets/ProjectsPhoo/quizzApp.png"
 import hotel from "../assets/ProjectsPhoo/hotel-managment-system.jpg"
 import book from "../assets/ProjectsPhoo/book-store.jpg"
 import projectManagment from "../assets/ProjectsPhoo/project_management.avif"
@@ -20,6 +20,12 @@ import daniels from "../assets/ProjectsPhoo/daniels.jpg"
 import quote from "../assets/ProjectsPhoo/quote.jpg"
 import bookmarker from "../assets/ProjectsPhoo/bookmarker.jpg"
 import smartlogin from "../assets/ProjectsPhoo/smartlogin.webp"
+import osaka from "../assets/ProjectsPhoo/osaka.png"
+import specialTemplate from "../assets/ProjectsPhoo/specialTemplate.png"
+
+
+
+
 
 
 export const DATA = {
@@ -223,7 +229,7 @@ export const DATA = {
       tech: ['Html',`Css`,'Javascript',`Font-awesome`,`Tailwindcss`,`jQuery`],
       live: 'https://khaled955.github.io/Osaka/',
       repo: 'https://github.com/khaled955/Osaka',
-      image:smartlogin,
+      image:osaka,
     },
     {
       title: 'Special-Template-Elzero-Landing-page',
@@ -231,7 +237,7 @@ export const DATA = {
       tech: ['Html',`Css`,'Javascript',`Font-awesome`,`Bootstrap`],
       live: 'https://khaled955.github.io/Special-Template-Elzero/',
       repo: 'https://github.com/khaled955/Special-Template-Elzero',
-      image:smartlogin,
+      image:specialTemplate,
     },
 
 
