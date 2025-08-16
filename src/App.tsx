@@ -58,7 +58,7 @@ function App(){
 
 
 
-      <main aria-hidden={!splashDone} id="main" className={`min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 selection:bg-amber-300/60`}>
+      <main aria-hidden={!splashDone} id="main" className={`min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 selection:bg-amber-300/60 overflow-x-hidden`}>
 
         <Navbar activeId={activeId} />
 
