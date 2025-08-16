@@ -1,5 +1,5 @@
 import type { Project } from "../types/Types";
-import quizz from "../assets/ProjectsPhoo/quizzApp.png"
+import quizz from "../assets/ProjectsPhoo/QuizzApp/quizz.png"
 import hotel from "../assets/ProjectsPhoo/hotel-managment-system.jpg"
 import book from "../assets/ProjectsPhoo/book-store.jpg"
 import projectManagment from "../assets/ProjectsPhoo/project_management.avif"
@@ -31,10 +31,12 @@ export const DATA = {
   socials: {
     github: 'https://github.com/khaled955',
     linkedin: 'https://www.linkedin.com/in/',
-    email: 'mailto:your@email.com',
+    email: 'khaledmansour104@yahoo.com',
   },
   skills: [
-    'HTML5','CSS3','Bootstrap','TailwindCSS','JavaScript','TypeScript','React','Next.js','Redux Toolkit','React Hook Form','Axios','MUI','i18next','Stripe','Git','GitHub','Figma'
+    'HTML5','CSS3','Bootstrap','TailwindCSS','JavaScript','TypeScript','React','Next.js','Redux Toolkit','React Hook Form','Axios','MUI','Stripe','Git','GitHub',
+    
+    'Figma',`formik`,`Yup`,`Vite`,`Figma`,`Context`,`JQuery`,`Font Awesome`,`Framer Motion`,`TanStack Query`,`Cookies`
   ],
   projects: [
     {

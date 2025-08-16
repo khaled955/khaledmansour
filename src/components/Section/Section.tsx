@@ -1,4 +1,4 @@
-interface Props { id: string; title: string; children: React.ReactNode }
+interface Props { id: string; title?: string; children: React.ReactNode }
 export default function Section({ id, title, children }: Props) {
   return (
     <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-24">

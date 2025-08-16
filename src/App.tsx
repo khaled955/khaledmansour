@@ -10,6 +10,7 @@ import Skills from "./components/Skills/Skills"
 import { DATA } from "./data/Data"
 import { useScrollSpy } from "./hooks/useScrollPay"
 import TypingSplash from "./components/TypingSplash/TypingSplash"
+import WhatsAppBadge from "./components/WhatsAppBadge/WhatsAppBadge"
 
 
 
@@ -47,6 +48,14 @@ function App(){
       )}
 
 
+{/* whats app badge */}
+ <WhatsAppBadge
+        phone="00966509784124"
+        message="Hi Khaled! I came from your portfolio."
+        variant="fab"
+      />
+
+
 
 
       <main aria-hidden={!splashDone} id="main" className={`min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 selection:bg-amber-300/60`}>
@@ -63,9 +72,13 @@ function App(){
           <About />
         </Section>
 
-        <Section id="skills" title="Skills">
-          <Skills skills={DATA.skills} />
+        <Section id="skills">
+                    <Skills skills={DATA.skills} />
+                    
+
         </Section>
+
+
 
         <Section id="projects" title="Projects">
           <Projects projects={DATA.projects} />
