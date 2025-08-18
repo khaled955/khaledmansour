@@ -9,7 +9,7 @@ export default function Projects({ projects }: Props) {
       {projects.map((p, idx) => (
         <motion.article key={idx} className="group relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-sm focus-within:ring-2 focus-within:ring-amber-500" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={fadeUp(idx * 0.05)}>
           <div className="overflow-hidden aspect-video">
-            <img src={p.image} alt={`${p.title} cover`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            <img src={p.image} alt={`${p.title} cover`} className="h-full w-full object-cover transition-transform duration-500" loading="lazy" />
           </div>
           <div className="p-4">
             <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">{p.title}</h3>

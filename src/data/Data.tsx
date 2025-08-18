@@ -1,7 +1,7 @@
 import type { Project } from "../types/Types";
 import quizz from "../assets/ProjectsPhoo/quizzApp.png"
 import hotel from "../assets/ProjectsPhoo/hotel-managment-system.jpg"
-import book from "../assets/ProjectsPhoo/book-store.jpg"
+import book from "../assets/ProjectsPhoo/bookstore.png"
 import projectManagment from "../assets/ProjectsPhoo/project_management.avif"
 import food from "../assets/ProjectsPhoo/food-manamgent.jpg"
 import ecommerce from "../assets/ProjectsPhoo/fresh-cart.jpg"
@@ -90,7 +90,7 @@ export const DATA = {
       title: 'E-commerce fresh-cart',
       description: 'E‑commerce bookstore with Redux cart, checkout, and profile with password change.',
       tech: ['React','Tailwindcss','Redux','Stripe',`formik`,`Yup`,`tanstack-query`,`Swiper`],
-      live: 'https://freshcart-xi.vercel.app/login',
+      live: 'https://freshcart-flax-gamma.vercel.app/',
       repo: 'https://github.com/khaled955/freshcart',
       image:ecommerce,
     },
