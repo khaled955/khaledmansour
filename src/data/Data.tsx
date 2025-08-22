@@ -9,7 +9,6 @@ import usermanagment from "../assets/ProjectsPhoo/user-managment.jpg"
 import product from "../assets/ProjectsPhoo/product.png"
 import templatefour from "../assets/ProjectsPhoo/templatefour.jpg"
 import templatethree from "../assets/ProjectsPhoo/template-3.jpeg"
-import templatetwo from "../assets/ProjectsPhoo/template-two.webp"
 import rentcar from "../assets/ProjectsPhoo/rentcar.png"
 import portifolio from "../assets/ProjectsPhoo/portifolio.webp"
 import yummy from "../assets/ProjectsPhoo/Yummy.jpg"
@@ -127,14 +126,7 @@ export const DATA = {
       image:templatethree,
     },
 
-    {
-      title: 'Template-2-Elzero',
-      description: 'Static Website By Html , Css , Font-awesome.',
-      tech: ['Html','Css','Font-awesome'],
-      live: 'https://khaled955.github.io/templatetwo/',
-      repo: 'https://github.com/khaled955/templatetwo',
-      image:templatetwo,
-    },
+ 
 
     {
       title: 'Rent-car',
