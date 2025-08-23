@@ -11,6 +11,7 @@ import { useScrollSpy } from "./hooks/useScrollPay"
 import TypingSplash from "./components/TypingSplash/TypingSplash"
 import WhatsAppBadge from "./components/WhatsAppBadge/WhatsAppBadge"
 import SocialLinks from "./components/Socials/SocialLinks/SocialLinks"
+import Testimonials from "./components/Testimonials/Testimonials"
 
 
 
@@ -86,6 +87,12 @@ function App(){
         <Section id="projects" title="Projects">
           <Projects  />
         </Section>
+
+    <Section id="testimonials" title="">
+  <Testimonials />
+</Section>
+
+
 
         <Section id="contact" title="">
           <Contacts  />

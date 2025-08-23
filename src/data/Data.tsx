@@ -1,4 +1,4 @@
-import type { Project } from "../types/Types";
+// import type { Project } from "../types/Types";
 import quizz from "../assets/ProjectsPhoo/quizzApp.png"
 import hotel from "../assets/ProjectsPhoo/hotel-managment-system.jpg"
 import book from "../assets/ProjectsPhoo/bookstore.png"
@@ -24,7 +24,12 @@ import specialTemplate from "../assets/ProjectsPhoo/specialTemplate.png"
 
 
 
-
+export type Testimonial = {
+  name: string;
+  title: string;
+  quote: string;
+  avatar: string; // public path or imported image
+};
 
 
 export const DATA = {
@@ -43,6 +48,33 @@ export const DATA = {
     
     'Figma',`formik`,`Yup`,`Vite`,`Figma`,`Context`,`JQuery`,`Font Awesome`,`Framer Motion`,`TanStack Query`,`Cookies`,`SASS`,
   ],
+  testimonials: [
+    {
+      name: "Eng:Yousef",
+      title: "Front-end Developer · JSB BootCamp",
+      quote:
+      `Khaled was a key member of our team working on real-time projects, where his strong technical expertise and ability to solve complex problems were invaluable. He consistently delivered high-quality code and played a central role in shaping technical decisions.
+Beyond his technical skills, Khaled was a reliable and collaborative teammate. He communicated clearly, supported others, and took full ownership of his work. His mix of technical depth and team-oriented attitude made a real difference on our projects.
+
+It was an honor to work with Khaled`,
+      avatar: "/avatars/yousef.jpg",
+    },
+    {
+      name: "Mona A.",
+      title: "Team Lead · Workshop Mentor",
+      quote:
+        "During our workshop, Khaled took ownership of the architecture, integrated API layers with Axios, and improved performance with Vite optimizations.",
+      avatar: "/avatars/general.webp",
+    },
+    {
+      name: "Omar K.",
+      title: "UI/UX Instructor",
+      quote:
+        "Great eye for detail. Thoughtful animations with Framer Motion and solid form flows using React Hook Form and Yup.",
+      avatar: "/avatars/general.webp",
+    },
+  ],
+  
   projects: [
     {
       title: 'Quiz Wiz App',
@@ -241,5 +273,5 @@ export const DATA = {
 
 
 
-  ] as Project[],
+  ] as const,
 }
