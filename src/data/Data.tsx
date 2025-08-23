@@ -60,18 +60,20 @@ It was an honor to work with Khaled`,
       avatar: "/avatars/yousef.jpg",
     },
     {
-      name: "Mona A.",
-      title: "Team Lead · Workshop Mentor",
-      quote:
-        "During our workshop, Khaled took ownership of the architecture, integrated API layers with Axios, and improved performance with Vite optimizations.",
+      name: "Eng:Muhammed Alaa",
+      title: "Front-end Developer · JSB BootCamp",
+      quote:`I had the pleasure of working alongside Khaled as a Frontend Developer, and I can confidently say he is one of the most dedicated and professional teammates I’ve worked with. He consistently showed a strong commitment to delivering high-quality results, always striving to improve and refine our work to achieve the best possible outcome.
+
+What stood out most was his openness to feedback he never hesitated to listen, learn, and apply suggestions, which made collaboration smooth and productive. Beyond his technical skills, he brings a positive attitude, respect, and professionalism to the team, creating an environment where everyone can perform at their best.
+
+I highly recommend Khaled for any project or team; he is not only a talented developer but also a great person to work with him`,
       avatar: "/avatars/general.webp",
     },
     {
-      name: "Omar K.",
-      title: "UI/UX Instructor",
-      quote:
-        "Great eye for detail. Thoughtful animations with Framer Motion and solid form flows using React Hook Form and Yup.",
-      avatar: "/avatars/general.webp",
+      name: " Eng:Hadeer Magdy",
+      title: "Front-end Instructor,UpSkilling",
+      quote:`Khaled was one of the outstanding students in the course. He was always punctual, committed to his tasks, and his work was consistently accurate and reflected a deep understanding of the content. In the projects we worked on together, he was eager to apply new ideas and search for creative solutions. I am confident he will be a valuable asset any Team.`,
+      avatar: "/public/avatars/hader.jpg",
     },
   ],
   
