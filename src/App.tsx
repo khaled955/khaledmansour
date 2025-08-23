@@ -1,5 +1,4 @@
 import { useState } from "react"
-import About from "./components/About/About"
 import Contacts from "./components/Contacts/Contacts"
 import Hero from "./components/Hero/Hero"
 import Navbar from "./components/Navbar/Navbar"
@@ -11,6 +10,7 @@ import { DATA } from "./data/Data"
 import { useScrollSpy } from "./hooks/useScrollPay"
 import TypingSplash from "./components/TypingSplash/TypingSplash"
 import WhatsAppBadge from "./components/WhatsAppBadge/WhatsAppBadge"
+import SocialLinks from "./components/Socials/SocialLinks/SocialLinks"
 
 
 
@@ -39,7 +39,7 @@ function App(){
 
    {!splashDone && (
       <TypingSplash
-  text="Welcome to Khaled Mansour Portfolio"
+  text="Welcome to Khaled Mansour Portifolio"
   onDone={() => setSplashDone(true)}
   oncePerSession
   soundSrc="/public/sounds/keyboard-typing-fast-371229.mp3"   // <-- your file in /public/sounds
@@ -68,10 +68,13 @@ function App(){
         
         />
 
-        <Section id="about" title="About">
-          <About />
-        </Section>
 
+
+
+<Section id="socials" title="Connect">
+  <SocialLinks socials={DATA.socials} />
+</Section>
+      
         <Section id="skills">
                     <Skills skills={DATA.skills} />
                     
@@ -81,11 +84,11 @@ function App(){
 
 
         <Section id="projects" title="Projects">
-          <Projects projects={DATA.projects} />
+          <Projects  />
         </Section>
 
-        <Section id="contact" title="Contact">
-          <Contacts socials={DATA.socials} />
+        <Section id="contact" title="">
+          <Contacts  />
         </Section>
         <ScrollToTop/>
 

@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import {
   SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiTailwindcss, SiMui,
   SiBootstrap, SiFramer, SiRedux, SiReacthookform, SiFormik, SiReactquery,
-  SiAxios, SiVite, SiGithub, SiFontawesome
+  SiAxios, SiVite, SiGithub, SiFontawesome,
+  SiSass,
+  SiJquery
 } from "react-icons/si";
 import { MdCookie } from "react-icons/md";
 import { HiOutlineSparkles } from "react-icons/hi2";
@@ -50,6 +52,7 @@ const GROUPS: Record<GroupKey, SkillDef[]> = {
     { name: "CSS3", icon: <SiCss3 className="h-5 w-5 text-[#1572B6]" /> },
     { name: "JavaScript (ES6+)", icon: <SiJavascript className="h-5 w-5 text-[#F7DF1E]" /> },
     { name: "TypeScript", icon: <SiTypescript className="h-5 w-5 text-[#3178C6]" /> },
+    { name: "JQuery", icon: <SiJquery className="h-5 w-5 text-[#3178C6]" /> },
   ],
   "UI & Styling": [
     { name: "Tailwind CSS", icon: <SiTailwindcss className="h-5 w-5 text-[#06B6D4]" /> },
@@ -58,6 +61,7 @@ const GROUPS: Record<GroupKey, SkillDef[]> = {
     { name: "Font Awesome", icon: <SiFontawesome className="h-5 w-5 text-[#538DD7]" /> },
     { name: "React Icons", icon: <HiOutlineSparkles className="h-5 w-5" /> },
         { name: "Framer Motion", icon: <SiFramer className="h-5 w-5" /> },
+        { name: "SASS", icon: <SiSass className="h-5 w-5" /> },
 
   ],
   "React Ecosystem": [

@@ -32,7 +32,7 @@ export const DATA = {
   role: 'Front‑End Developer',
   location: 'Saudi Arabia',
   summary:
-    'Front-end developer specialized in React, TypeScript, Tailwind,Bootstrap ,and animation. I build accessible, fast, multilingual apps with clean UX.',
+  `I design and ship fast, accessible UIs with React + TS, styled with Tailwind/MUI/Bootstrap and polished by Framer Motion. I handle state and data with Redux Toolkit and TanStack Query, build reliable forms with React Hook Form or Formik/Yup, integrate APIs via Axios, and optimize builds with Vite. Multilingual, clean UX, production-ready.`,
   socials: {
     github: 'https://github.com/khaled955',
     linkedin: 'https://www.linkedin.com/in/',
@@ -41,7 +41,7 @@ export const DATA = {
   skills: [
     'HTML5','CSS3','Bootstrap','TailwindCSS','JavaScript','TypeScript','React','Next.js','Redux Toolkit','React Hook Form','Axios','MUI','Stripe','Git','GitHub',
     
-    'Figma',`formik`,`Yup`,`Vite`,`Figma`,`Context`,`JQuery`,`Font Awesome`,`Framer Motion`,`TanStack Query`,`Cookies`
+    'Figma',`formik`,`Yup`,`Vite`,`Figma`,`Context`,`JQuery`,`Font Awesome`,`Framer Motion`,`TanStack Query`,`Cookies`,`SASS`,
   ],
   projects: [
     {
