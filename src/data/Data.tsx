@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 // import type { Project } from "../types/Types";
 import quizz from "../assets/ProjectsPhoo/quizzApp.png"
 import hotel from "../assets/ProjectsPhoo/hotel-managment-system.jpg"
@@ -75,6 +76,19 @@ I highly recommend Khaled for any project or team; he is not only a talented dev
       quote:`Khaled was one of the outstanding students in the course. He was always punctual, committed to his tasks, and his work was consistently accurate and reflected a deep understanding of the content. In the projects we worked on together, he was eager to apply new ideas and search for creative solutions. I am confident he will be a valuable asset any Team.`,
       avatar: "/public/avatars/hader.jpg",
     },
+    {
+      name: " Eng:Anas",
+      title: "Front-end Developer · JSB BootCamp",
+      quote:`شكرا جدا ليك يا دكتور ، انا انبسط جدا اني اشتغلت معاك في كذا مشروع وفعلا انت شخصية ذو كفاءة ومحترم جدا ،والواحد مبسوط أنه اتعرف عليك`,
+      avatar: "/public/avatars/anas.jpg",
+    },
+
+
+
+
+
+
+
   ],
   
   projects: [
