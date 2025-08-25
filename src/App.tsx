@@ -12,7 +12,7 @@ import TypingSplash from "./components/TypingSplash/TypingSplash"
 import WhatsAppBadge from "./components/WhatsAppBadge/WhatsAppBadge"
 import SocialLinks from "./components/Socials/SocialLinks/SocialLinks"
 import Testimonials from "./components/Testimonials/Testimonials"
-
+import sound from "../src/assets/sounds/keyboard-typing-fast-371229.mp3"
 
 
 const showcaseImages: string[] = DATA.projects
@@ -43,7 +43,7 @@ function App(){
   text="Welcome to Khaled Mansour Portifolio"
   onDone={() => setSplashDone(true)}
   oncePerSession
-  soundSrc="/public/sounds/keyboard-typing-fast-371229.mp3"   // <-- your file in /public/sounds
+  soundSrc={sound}
   soundVolume={0.35}
 />
       )}
