@@ -114,23 +114,15 @@ export default function Projects() {
 
 
 {/* Filter bar (enhanced) */}
-<div className="relative -mx-4 md:mx-0">
-  {/* soft gradient edges on mobile while scrolling */}
-  <div className="pointer-events-none absolute left-0 top-0 h-full w-6 bg-gradient-to-r from-white to-transparent dark:from-zinc-950 md:hidden" />
-  <div className="pointer-events-none absolute right-0 top-0 h-full w-6 bg-gradient-to-l from-white to-transparent dark:from-zinc-950 md:hidden" />
 
-  <div
-    className="
-      flex items-center gap-2 overflow-x-auto px-4 py-2 md:flex-wrap md:overflow-visible
-      [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden
-      snap-x
-    "
-  >
+{/* Filter bar — always wraps (no horizontal scroll) */}
+<div className="w-full">
+  <div className="flex flex-wrap items-center gap-2 px-1 py-2">
     {/* ALL */}
     <button
       onClick={clearAll}
       aria-pressed={active.size === 0}
-      className={`snap-start inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium shadow-sm transition
+      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium shadow-sm transition
         focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white
         dark:focus-visible:ring-amber-400/60 dark:focus-visible:ring-offset-0
         ${active.size === 0
@@ -138,11 +130,10 @@ export default function Projects() {
           : "border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-zinc-900 dark:text-neutral-300 dark:hover:bg-zinc-800"}`}
     >
       All
-      <span
-        className={`ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[11px] font-semibold
-          ${active.size === 0 ? "bg-white/20 text-white dark:bg-black/10 dark:text-neutral-900"
-                              : "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"}`}
-      >
+      <span className={`${active.size === 0
+          ? "bg-white/20 text-white dark:bg-black/10 dark:text-neutral-900"
+          : "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"}
+          ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[11px] font-semibold`}>
         {items.length}
       </span>
     </button>
@@ -158,8 +149,7 @@ export default function Projects() {
           onClick={() => !disabled && toggle(t.id)}
           disabled={disabled}
           aria-pressed={isOn}
-          title={disabled ? "No projects for this tag yet" : t.label}
-          className={`snap-start inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium transition
+          className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium transition
             focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white
             dark:focus-visible:ring-amber-400/60 dark:focus-visible:ring-offset-0
             ${disabled ? "cursor-not-allowed opacity-40"
@@ -168,11 +158,10 @@ export default function Projects() {
                          : "border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-zinc-900 dark:text-neutral-300 dark:hover:bg-zinc-800"}`}
         >
           {t.label}
-          <span
-            className={`ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[11px] font-semibold
-              ${isOn ? "bg-white/20 text-white dark:bg-black/10 dark:text-neutral-900"
-                     : "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"}`}
-          >
+          <span className={`${isOn
+              ? "bg-white/20 text-white dark:bg-black/10 dark:text-neutral-900"
+              : "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"}
+              ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[11px] font-semibold`}>
             {counts[t.id]}
           </span>
         </button>
