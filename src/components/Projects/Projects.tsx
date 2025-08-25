@@ -74,7 +74,7 @@ export default function Projects() {
       <header className="mb-4 flex flex-wrap items-end justify-between gap-3">
 
         {/* Filter bar */}
-        <div className="w-full overflow-x-auto">
+        {/* <div className="w-full overflow-x-auto">
           <div className="flex items-center gap-2 min-w-max">
             <button
               onClick={clearAll}
@@ -110,7 +110,79 @@ export default function Projects() {
               );
             })}
           </div>
-        </div>
+        </div> */}
+
+
+{/* Filter bar (enhanced) */}
+<div className="relative -mx-4 md:mx-0">
+  {/* soft gradient edges on mobile while scrolling */}
+  <div className="pointer-events-none absolute left-0 top-0 h-full w-6 bg-gradient-to-r from-white to-transparent dark:from-zinc-950 md:hidden" />
+  <div className="pointer-events-none absolute right-0 top-0 h-full w-6 bg-gradient-to-l from-white to-transparent dark:from-zinc-950 md:hidden" />
+
+  <div
+    className="
+      flex items-center gap-2 overflow-x-auto px-4 py-2 md:flex-wrap md:overflow-visible
+      [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden
+      snap-x
+    "
+  >
+    {/* ALL */}
+    <button
+      onClick={clearAll}
+      aria-pressed={active.size === 0}
+      className={`snap-start inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium shadow-sm transition
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white
+        dark:focus-visible:ring-amber-400/60 dark:focus-visible:ring-offset-0
+        ${active.size === 0
+          ? "border-neutral-900 bg-neutral-900 text-white dark:border-white dark:bg-white dark:text-neutral-900"
+          : "border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-zinc-900 dark:text-neutral-300 dark:hover:bg-zinc-800"}`}
+    >
+      All
+      <span
+        className={`ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[11px] font-semibold
+          ${active.size === 0 ? "bg-white/20 text-white dark:bg-black/10 dark:text-neutral-900"
+                              : "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"}`}
+      >
+        {items.length}
+      </span>
+    </button>
+
+    {/* TAGS */}
+    {TAGS.map((t) => {
+      const isOn = active.has(t.id);
+      const disabled = counts[t.id] === 0;
+
+      return (
+        <button
+          key={t.id}
+          onClick={() => !disabled && toggle(t.id)}
+          disabled={disabled}
+          aria-pressed={isOn}
+          title={disabled ? "No projects for this tag yet" : t.label}
+          className={`snap-start inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-medium transition
+            focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white
+            dark:focus-visible:ring-amber-400/60 dark:focus-visible:ring-offset-0
+            ${disabled ? "cursor-not-allowed opacity-40"
+                       : isOn
+                         ? "border-neutral-900 bg-neutral-900 text-white shadow-sm dark:border-white dark:bg-white dark:text-neutral-900"
+                         : "border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-zinc-900 dark:text-neutral-300 dark:hover:bg-zinc-800"}`}
+        >
+          {t.label}
+          <span
+            className={`ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[11px] font-semibold
+              ${isOn ? "bg-white/20 text-white dark:bg-black/10 dark:text-neutral-900"
+                     : "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"}`}
+          >
+            {counts[t.id]}
+          </span>
+        </button>
+      );
+    })}
+  </div>
+</div>
+
+
+
       </header>
 
       {/* Grid */}
@@ -118,7 +190,7 @@ export default function Projects() {
         {filtered.map((p) => (
           <article
             key={p.title}
-            className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-zinc-900"
+            className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-zinc-900 duration-300"
           >
             <div className="aspect-[3/2] overflow-hidden rounded-xl ring-1 ring-slate-200 dark:ring-slate-800">
               <img
@@ -149,30 +221,48 @@ export default function Projects() {
             </div>
 
             {/* Actions */}
-            <div className="mt-3 flex items-center gap-2">
-              {p.live && (
-                <a
-                  href={p.live}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-800 transition hover:bg-slate-100"
-                >
-                  <i className="fa-regular fa-eye" />
-                  Live
-                </a>
-              )}
-              {p.repo && (
-                <a
-                  href={p.repo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-800 transition hover:bg-slate-100"
-                >
-                  <i className="fa-brands fa-github" />
-                  Code
-                </a>
-              )}
-            </div>
+          
+<div className="mt-3 flex items-center gap-2">
+  {p.live && (
+    <a
+      href={p.live}
+      target="_blank"
+      rel="noreferrer"
+      className="
+        inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm font-medium shadow-sm transition
+        border-sky-700 bg-sky-600 text-white hover:bg-sky-700
+        focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-white
+        dark:border-amber-500 dark:bg-amber-400 dark:text-neutral-900 dark:hover:bg-amber-500
+        dark:focus:ring-amber-400 dark:focus:ring-offset-0
+      "
+    >
+      <i className="fa-regular fa-eye" />
+      Live
+    </a>
+  )}
+
+  {p.repo && (
+    <a
+      href={p.repo}
+      target="_blank"
+      rel="noreferrer"
+      className="
+        inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm font-medium transition
+        border-slate-300 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-400
+        focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-white
+        dark:border-slate-700 dark:bg-transparent dark:text-slate-200
+        dark:hover:bg-slate-800 dark:hover:border-slate-600
+        dark:focus:ring-slate-600 dark:focus:ring-offset-0
+      "
+    >
+      <i className="fa-brands fa-github" />
+      Code
+    </a>
+  )}
+</div>
+
+
+
           </article>
         ))}
       </div>
