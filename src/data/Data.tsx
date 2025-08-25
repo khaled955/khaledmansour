@@ -22,8 +22,10 @@ import bookmarker from "../assets/ProjectsPhoo/bookmarker.jpg"
 import smartlogin from "../assets/ProjectsPhoo/smartlogin.webp"
 import osaka from "../assets/ProjectsPhoo/osaka.png"
 import specialTemplate from "../assets/ProjectsPhoo/specialTemplate.png"
-
-
+import anas from "../assets/avatars/anas.jpg"
+import hader from "../assets/avatars/hader.jpg"
+import yousef from "../assets/avatars/yousef.jpg"
+import Mrgenerals from "../assets/avatars/general.webp"
 
 export type Testimonial = {
   name: string;
@@ -58,7 +60,7 @@ export const DATA = {
 Beyond his technical skills, Khaled was a reliable and collaborative teammate. He communicated clearly, supported others, and took full ownership of his work. His mix of technical depth and team-oriented attitude made a real difference on our projects.
 
 It was an honor to work with Khaled`,
-      avatar: "/avatars/yousef.jpg",
+      avatar: yousef,
     },
     {
       name: "Eng:Muhammed Alaa",
@@ -68,19 +70,19 @@ It was an honor to work with Khaled`,
 What stood out most was his openness to feedback he never hesitated to listen, learn, and apply suggestions, which made collaboration smooth and productive. Beyond his technical skills, he brings a positive attitude, respect, and professionalism to the team, creating an environment where everyone can perform at their best.
 
 I highly recommend Khaled for any project or team; he is not only a talented developer but also a great person to work with him`,
-      avatar: "/avatars/general.webp",
+      avatar: Mrgenerals,
     },
     {
       name: " Eng:Hadeer Magdy",
       title: "Front-end Instructor,UpSkilling",
       quote:`Khaled was one of the outstanding students in the course. He was always punctual, committed to his tasks, and his work was consistently accurate and reflected a deep understanding of the content. In the projects we worked on together, he was eager to apply new ideas and search for creative solutions. I am confident he will be a valuable asset any Team.`,
-      avatar: "/public/avatars/hader.jpg",
+      avatar: hader,
     },
     {
       name: " Eng:Anas",
       title: "Front-end Developer · JSB BootCamp",
       quote:`شكرا جدا ليك يا دكتور ، انا انبسط جدا اني اشتغلت معاك في كذا مشروع وفعلا انت شخصية ذو كفاءة ومحترم جدا ،والواحد مبسوط أنه اتعرف عليك`,
-      avatar: "/public/avatars/anas.jpg",
+      avatar: anas,
     },
 
 
